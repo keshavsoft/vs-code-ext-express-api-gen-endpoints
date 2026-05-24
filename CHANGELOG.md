@@ -9,3 +9,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - Initial release
 
 v3 perfect with simple
+
+tested perfect, 
+
+now need to take folder and table 
