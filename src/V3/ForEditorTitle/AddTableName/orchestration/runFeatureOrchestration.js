@@ -3,10 +3,9 @@ import path from 'path';
 
 import * as vscode from 'vscode';
 
-import addSubRoute from "kschema-api-gen-routesjs";
+import addTableName from "kschema-api-gen-endpointsjs";
 
 import { fileURLToPath } from 'url';
-import { copyTemplate } from '../services/copyTemplate.js';
 
 export async function runFeatureOrchestration({ context }) {
     const endpoint = await getEndpoint();
@@ -20,13 +19,14 @@ export async function runFeatureOrchestration({ context }) {
         templatePath: fileURLToPath(new URL('../templates/Base', import.meta.url))
     };
 
-    const funcToRun = await addSubRoute();
+    const funcToRun = await addTableName();
 
     await funcToRun({
         showLog: true,
         isAnnounce: true,
         folderName: endpoint,
-        toPath: localContext.targetPath
+        toPath: localContext.targetPath,
+        tableName: "Tab1"
     });
 
     return { endpoint };
@@ -41,9 +41,3 @@ async function getEndpoint() {
 
     return clean;
 };
-
-// change copy
-function copy({ templatePath, routeFilePath, endpointFolder }) {
-    if (!fs.existsSync(endpointFolder)) fs.mkdirSync(endpointFolder, { recursive: true });
-    copyTemplate({ templatePath, targetPath: routeFilePath });
-}
