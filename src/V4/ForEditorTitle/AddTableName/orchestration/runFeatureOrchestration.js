@@ -7,15 +7,58 @@ import addTableName from "kschema-api-gen-endpointsjs";
 
 import { fileURLToPath } from 'url';
 
+async function getFolderAndTable() {
+    const input = await vscode.window.showInputBox({
+        prompt: "Enter FolderName and TableName",
+        placeHolder: "Users Tasks"
+    });
+
+    if (!input) return null;
+
+    const clean = input.trim();
+
+    const separators = [' ', '.', ':'];
+
+    let folderName = null;
+    let tableName = null;
+
+    for (const sep of separators) {
+        if (clean.includes(sep)) {
+            const parts = clean.split(sep).map(p => p.trim()).filter(Boolean);
+
+            if (parts.length >= 2) {
+                folderName = parts[0];
+                tableName = parts[1];
+                break;
+            }
+        }
+    }
+
+    // 👉 If only one value → use same for both
+    if (!folderName) {
+        folderName = clean;
+        tableName = clean;
+    }
+
+    // sanitize
+    folderName = folderName.replace(/[^a-zA-Z0-9_]/g, '');
+    tableName = tableName.replace(/[^a-zA-Z0-9_]/g, '');
+
+    return {
+        folderName,
+        tableName
+    };
+};
+
 export async function runFeatureOrchestration({ context }) {
-    const endpoint = await getEndpoint();
-    if (!endpoint) return null;
+    const { folderName, tableName } = await getFolderAndTable();
+    // const endpoint = await getEndpoint();
 
     // fix inside localContext
     const localContext = {
         ...context,
-        endpointFolder: path.join(context.targetPath, endpoint),
-        routeFilePath: path.join(context.targetPath, endpoint),
+        endpointFolder: path.join(context.targetPath, folderName),
+        routeFilePath: path.join(context.targetPath, folderName),
         templatePath: fileURLToPath(new URL('../templates/Base', import.meta.url))
     };
 
@@ -24,12 +67,12 @@ export async function runFeatureOrchestration({ context }) {
     await funcToRun({
         showLog: true,
         isAnnounce: true,
-        folderName: endpoint,
+        folderName,
         toPath: localContext.targetPath,
-        tableName: "Tab1"
+        tableName
     });
 
-    return { endpoint };
+    return { folderName };
 }
 // update only this
 async function getEndpoint() {
