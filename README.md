@@ -31,7 +31,7 @@ Enter table name and folder name (folderName : tableName)
 Example:
 
 ```bash
-Customers
+Customers : Customers
 ```
 
 ---
@@ -48,8 +48,6 @@ Customers/
 ```
 
 ---
-
-
 # 💡 Why Use This Extension?
 
 * Save backend setup time
