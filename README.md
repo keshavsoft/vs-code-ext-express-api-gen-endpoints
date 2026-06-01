@@ -1,60 +1,141 @@
-# EndPointGen VS Code Extension
+# README.md — vs-code-ext-express-api-gen-endpoints 🚀
 
-## Overview
+# vs-code-ext-express-api-gen-endpoints 🚀
 
-**EndPointGen** is a Visual Studio Code extension developed by **KeshavSoft** focused on **AI-assisted server-side development using Node.js and Express**.  
-It helps developers quickly generate endpoints, sub-routes, and API structure directly from the Explorer context menu.
+VS Code extension for automatically generating Express.js endpoint folders and table-based API structures.
 
----
-
-## Demo
-
-![Demo](Docs/Information/demo.gif)
+Create endpoint folders, configure table names, and generate `end-points.js` files directly from the VS Code Title Bar.
 
 ---
 
-## Installation
+# ✨ Overview
 
-1. Open VS Code  
-2. Go to Extensions  
-3. Search: **EndPointGen**  
-4. Click Install  
+**vs-code-ext-express-api-gen-endpoints** is a Visual Studio Code extension developed by **KeshavSoft** to simplify Express.js endpoint generation.
 
----
+The extension helps developers rapidly create:
 
-## Features
+* Table-based endpoint folders
+* `end-points.js` files
+* Config table entries
+* Express.js modular API structure
 
-- Generate Express.js API structure instantly  
-- Create endpoints in `app.js` with minimal effort  
-- Add modular sub-routes in `routes.js`  
-- Inject endpoint logic into `.js` files  
-- Context-aware right-click actions in Explorer  
-- Modular orchestration-based architecture  
+with minimal manual setup.
 
 ---
 
-## Commands
+# 🎯 Main Purpose
 
-| Command                  | Title             | Description                                               |
-|--------------------------|-------------------|-----------------------------------------------------------|
-| extension.initJs         | Initiate Node API | Initializes base Express server structure                |
-| extension.createEndpoint | CreateEndpoint    | Creates a new route entry in `app.js`                    |
-| extension.addSubRoute    | AddSubRoute       | Registers sub-route modules in `routes.js`               |
-| extension.addEndPoint    | AddEndPoint       | Injects endpoint logic into selected `.js` file          |
+When clicking:
 
----
+```bash
+AddTableName
+```
 
-## Usage
+the extension:
 
-- Open your Node.js project in VS Code  
-- Right-click on a file or folder  
-- Select a command from the context menu  
-- Extension generates/updates files automatically  
+* Opens popup input
+* Asks for table name
+* Creates folder using table name
+* Creates `end-points.js`
+* Configures table inside endpoint file
 
 ---
 
-## Example
+# ⚡ Features
 
-**Before**
+✅ Create endpoint folders automatically
+✅ Generate `end-points.js`
+✅ Configure table name automatically
+✅ Faster backend initialization
+✅ Modular Express.js architecture
+✅ VS Code Title Bar integration
+✅ Beginner-friendly workflow
+
+---
+
+# 🛠️ Workflow
+
+## Step 1
+
+Click:
+
+```bash
+AddTableName
+```
+
+from VS Code Title Bar.
+
+---
+
+## Step 2
+
+Enter table name.
+
+Example:
+
+```bash
+Customers
+```
+
+---
+
+## Step 3
+
+Extension automatically creates:
+
+```bash
+Customers/
+└── end-points.js
+```
+
+---
+
+# 🚀 Generated Example
+
 ```js
-// No routes
+const TableName = "Customers";
+```
+
+---
+
+# 📁 Folder Structure
+
+```bash
+vs-code-ext-express-api-gen-endpoints
+│
+├── .vscode
+├── archive
+├── Docs
+├── src
+├── test
+│
+├── extension.js
+├── package.json
+├── README.md
+└── CHANGELOG.md
+```
+
+---
+
+# 💡 Why Use This Extension?
+
+* Save backend setup time
+* Quickly create endpoint structure
+* Standardize API architecture
+* Reduce repetitive coding
+* Improve developer productivity
+
+---
+
+# 🧠 Built With
+
+* Node.js
+* Express.js
+* JavaScript
+* VS Code Extension API
+
+---
+
+# 👨‍💻 Author
+
+Developed by **KeshavSoft**
