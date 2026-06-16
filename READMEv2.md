@@ -69,52 +69,6 @@ Customers/
 ✅ Beginner-friendly workflow
 ---
 
-# 🧠 Built With
+# 👨‍💻 Author
 
-- Node.js — https://nodejs.org
-- Express.js — https://expressjs.com
-- VS Code Extension API — https://code.visualstudio.com/
-- JavaScript
-- HTML5
-- CSS3
-
----
-
-# 📄 License
-
-MIT License
-
----
-
-# ⭐ Support
-
-## ⭐ Star Repository
-
-```md
-https://github.com/keshavsoft/vs-code-ext-express-api-gen-endpoints
-```
-
----
-
-## 🍴 Fork Repository
-
-```md
-https://github.com/keshavsoft/vs-code-ext-express-api-gen-endpoints/fork
-```
-
----
-
-## 🛒 VS Code Marketplace
-
-```md
-https://marketplace.visualstudio.com/items?itemName=KeshavSoft.vs-code-ext-express-api-gen-endpoints
-```
-
----
-
-## 🚀 Share With Developers
-
-```md
-https://marketplace.visualstudio.com/items?itemName=KeshavSoft.vs-code-ext-express-api-gen-endpoints
-```
-
+Developed by **KeshavSoft**
