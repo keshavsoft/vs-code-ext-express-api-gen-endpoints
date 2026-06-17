@@ -122,7 +122,7 @@ npm install
 ## Run Extension
 
 ```bash
-F5
+npm run start
 ```
 
 ---
