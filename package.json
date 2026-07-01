@@ -22,16 +22,31 @@
       {
         "command": "extension.editor.title.routesjs.addTableName",
         "title": "AddTableName"
+      },
+      {
+        "command": "extension.editor.title.routesjs.addTableNameHtml",
+        "title": "AddTableNameHtml"
       }
     ],
     "menus": {
-      "explorer/context": [],
+      "explorer/context": [
+        {
+          "command": "extension.editor.title.routesjs.addTableNameHtml",
+          "when": "resourceFilename == routes.js",
+          "group": "navigation@2"
+        }
+      ],
       "editor/context": [],
       "editor/title": [
         {
           "command": "extension.editor.title.routesjs.addTableName",
           "when": "resourceFilename == routes.js",
           "group": "navigation@2"
+        },
+        {
+          "command": "extension.editor.title.routesjs.addTableNameHtml",
+          "when": "resourceFilename == routes.js",
+          "group": "navigation@3"
         }
       ]
     }
