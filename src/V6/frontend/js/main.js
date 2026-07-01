@@ -19,6 +19,12 @@ window.addEventListener("message", ({ data }) => {
                     option.textContent = `${schema.tableName} (${schema.name})`;
                     select.appendChild(option);
                 });
+
+                // Auto fill folder input with the first loaded table name if empty
+                const folderInput = document.getElementById("folder-name");
+                if (folderInput && !folderInput.value.trim()) {
+                    folderInput.value = select.value;
+                }
             } else {
                 const option = document.createElement("option");
                 option.value = "";
@@ -28,6 +34,17 @@ window.addEventListener("message", ({ data }) => {
         }
     }
 });
+
+// Setup dropdown change listener to auto-populate folder name if empty
+const select = document.getElementById("table-select");
+const folderInput = document.getElementById("folder-name");
+if (select && folderInput) {
+    select.addEventListener("change", () => {
+        if (!folderInput.value.trim()) {
+            folderInput.value = select.value;
+        }
+    });
+}
 
 // Load schemas on initialization
 sendAction("loadSchemas");

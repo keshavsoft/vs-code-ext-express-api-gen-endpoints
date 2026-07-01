@@ -17,5 +17,5 @@ function getFolderName(defaultValue = "") {
 }
 
 function addTableName() {
-    sendAction("addTableName", { tableName: getSelectedTable(), inFolderName: getFolderName("addTableName") });
+    sendAction("addTableName", { tableName: getSelectedTable(), inFolderName: getFolderName(getSelectedTable()) });
 }
