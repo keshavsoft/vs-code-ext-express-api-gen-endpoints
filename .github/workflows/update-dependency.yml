@@ -1,0 +1,32 @@
+name: Update Dependency on Publish
+
+on:
+  repository_dispatch:
+    types: [kschema_published]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-dependency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Update dependency to latest
+        run: npm install kschema-api-gen-endpointsjs@latest
+
+      - name: Commit and Push changes
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git add package.json package-lock.json
+          git diff-index --quiet HEAD || git commit -m "chore: update kschema-api-gen-endpointsjs dependency"
+          git push
