@@ -35,14 +35,12 @@ window.addEventListener("message", ({ data }) => {
     }
 });
 
-// Setup dropdown change listener to auto-populate folder name if empty
+// Setup dropdown change listener to auto-populate folder name
 const select = document.getElementById("table-select");
 const folderInput = document.getElementById("folder-name");
 if (select && folderInput) {
     select.addEventListener("change", () => {
-        if (!folderInput.value.trim()) {
-            folderInput.value = select.value;
-        }
+        folderInput.value = select.value;
     });
 }
 
