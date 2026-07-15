@@ -4,7 +4,7 @@
   "description": "express generate from endpoints file, with table Name",
   "publisher": "KeshavSoft",
   "type": "module",
-  "version": "1.8.1",
+  "version": "1.9.1",
   "engines": {
     "vscode": "^1.116.0"
   },
@@ -26,6 +26,10 @@
       {
         "command": "extension.editor.title.routesjs.addTableNameHtml",
         "title": "AddTableNameHtml"
+      },
+      {
+        "command": "extension.editor.title.frontend.addListeners.addHtmlId",
+        "title": "addHtmlId"
       }
     ],
     "menus": {
@@ -46,6 +50,11 @@
         {
           "command": "extension.editor.title.routesjs.addTableNameHtml",
           "when": "resourceFilename == routes.js",
+          "group": "navigation@3"
+        },
+        {
+          "command": "extension.editor.title.frontend.addListeners.addHtmlId",
+          "when": "resourceFilename == addListeners.js",
           "group": "navigation@3"
         }
       ]
