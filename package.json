@@ -74,6 +74,7 @@
     "eslint": "^9.39.3"
   },
   "dependencies": {
-    "kschema-ui-hook-add-listeners": "^1.3.3"
+    "kschema-api-gen-endpointsjs": "^1.7.4",
+    "kschema-ui-hook-add-listeners": "^1.3.5"
   }
 }

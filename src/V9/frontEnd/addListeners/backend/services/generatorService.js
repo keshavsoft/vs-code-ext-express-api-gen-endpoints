@@ -12,14 +12,19 @@ export async function executeGenerationTask({
     });
 
     try {
-        const funcToRun = await generateFunc();
-
-        await funcToRun({
+        const funcToRun = generateFunc({
             showLog: true,
             isAnnounce: true,
             folderName: inFolderName || "",
             toPath
         });
+
+        // await funcToRun({
+        //     showLog: true,
+        //     isAnnounce: true,
+        //     folderName: inFolderName || "",
+        //     toPath
+        // });
 
         panel.webview.postMessage({
             type: "complete",
