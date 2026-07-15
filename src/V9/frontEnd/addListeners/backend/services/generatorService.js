@@ -1,5 +1,3 @@
-import * as vscode from 'vscode';
-
 export async function executeGenerationTask({
     panel,
     actionLabel,
@@ -20,8 +18,7 @@ export async function executeGenerationTask({
             showLog: true,
             isAnnounce: true,
             folderName: inFolderName || "",
-            toPath,
-            tableName
+            toPath
         });
 
         panel.webview.postMessage({

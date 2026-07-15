@@ -1,4 +1,4 @@
-import addTableName from 'kschema-api-gen-endpointsjs';
+import hookListener from 'kschema-ui-hook-add-listeners';
 import { executeGenerationTask } from "../generatorService.js";
 
 const startFunc = async ({ panel, tableName, toPath, inFolderName }) => {
@@ -7,7 +7,7 @@ const startFunc = async ({ panel, tableName, toPath, inFolderName }) => {
         actionLabel: "Add Table Name",
         tableName,
         toPath,
-        generateFunc: addTableName,
+        generateFunc: hookListener,
         inFolderName
     });
 };

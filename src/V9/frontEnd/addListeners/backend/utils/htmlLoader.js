@@ -21,7 +21,7 @@ export function getHtmlWithScripts() {
         html = html.replace("<!-- SCRIPTS -->", scriptTags);
     } else {
         html = html.replace("</body>", `${scriptTags}\n</body>`);
-    }
+    };
 
     return html;
 }
